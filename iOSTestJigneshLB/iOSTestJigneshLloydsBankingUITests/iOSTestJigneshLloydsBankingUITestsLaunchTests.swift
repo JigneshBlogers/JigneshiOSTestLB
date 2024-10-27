@@ -1,13 +1,13 @@
 //
-//  iOSTestJigneshLloydsBankingUITestsLaunchTests.swift
-//  iOSTestJigneshLloydsBankingUITests
+//  iOSTestJigneshLBUITestsLaunchTests.swift
+//  iOSTestJigneshLBUITests
 //
 //  Created by jignesh kalantri on 26/10/24.
 //
 
 import XCTest
 
-final class iOSTestJigneshLloydsBankingUITestsLaunchTests: XCTestCase {
+final class iOSTestJigneshLBUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

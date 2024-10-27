@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		95589F742CCCC15F00F63AF4 /* iOSTestJigneshLloydsBankingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95589F732CCCC15F00F63AF4 /* iOSTestJigneshLloydsBankingApp.swift */; };
-		95589F762CCCC15F00F63AF4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95589F752CCCC15F00F63AF4 /* ContentView.swift */; };
-		95589F782CCCC16000F63AF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95589F772CCCC16000F63AF4 /* Assets.xcassets */; };
-		95589F7B2CCCC16000F63AF4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95589F7A2CCCC16000F63AF4 /* Preview Assets.xcassets */; };
 		95589F852CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95589F842CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingTests.swift */; };
 		95589F8F2CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95589F8E2CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingUITests.swift */; };
 		95589F912CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95589F902CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingUITestsLaunchTests.swift */; };
-		95589F9F2CCCC18900F63AF4 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95589F9E2CCCC18900F63AF4 /* Character.swift */; };
-		95589FA22CCCC1B500F63AF4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95589FA12CCCC1B500F63AF4 /* NetworkManager.swift */; };
-		95589FA42CCCC1E400F63AF4 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95589FA32CCCC1E400F63AF4 /* CharacterViewModel.swift */; };
-		95589FA82CCCC31A00F63AF4 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95589FA72CCCC31A00F63AF4 /* CharacterDetailView.swift */; };
+		95A7B78F2CCE40C500C239F8 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B7812CCE40C500C239F8 /* CharacterDetailView.swift */; };
+		95A7B7902CCE40C500C239F8 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B7832CCE40C500C239F8 /* Character.swift */; };
+		95A7B7912CCE40C500C239F8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B7852CCE40C500C239F8 /* NetworkManager.swift */; };
+		95A7B7922CCE40C500C239F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A7B7872CCE40C500C239F8 /* Preview Assets.xcassets */; };
+		95A7B7932CCE40C500C239F8 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B7892CCE40C500C239F8 /* CharacterViewModel.swift */; };
+		95A7B7942CCE40C500C239F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A7B78B2CCE40C500C239F8 /* Assets.xcassets */; };
+		95A7B7952CCE40C500C239F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B78C2CCE40C500C239F8 /* ContentView.swift */; };
+		95A7B7962CCE40C500C239F8 /* iOSTestJigneshLloydsBankingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B78D2CCE40C500C239F8 /* iOSTestJigneshLloydsBankingApp.swift */; };
+		95A7B7982CCE51F100C239F8 /* NetworkManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B7972CCE51F000C239F8 /* NetworkManaging.swift */; };
+		95A7B79B2CCE522F00C239F8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B79A2CCE522F00C239F8 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,20 +40,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		95589F702CCCC15F00F63AF4 /* iOSTestJigneshLloydsBanking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTestJigneshLloydsBanking.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		95589F732CCCC15F00F63AF4 /* iOSTestJigneshLloydsBankingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTestJigneshLloydsBankingApp.swift; sourceTree = "<group>"; };
-		95589F752CCCC15F00F63AF4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		95589F772CCCC16000F63AF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		95589F7A2CCCC16000F63AF4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		95589F802CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSTestJigneshLloydsBankingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		95589F702CCCC15F00F63AF4 /* iOSTestJigneshLB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTestJigneshLB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		95589F802CCCC16000F63AF4 /* iOSTestJigneshLBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSTestJigneshLBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95589F842CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTestJigneshLloydsBankingTests.swift; sourceTree = "<group>"; };
-		95589F8A2CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSTestJigneshLloydsBankingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		95589F8A2CCCC16000F63AF4 /* iOSTestJigneshLBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSTestJigneshLBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95589F8E2CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTestJigneshLloydsBankingUITests.swift; sourceTree = "<group>"; };
 		95589F902CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTestJigneshLloydsBankingUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		95589F9E2CCCC18900F63AF4 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
-		95589FA12CCCC1B500F63AF4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		95589FA32CCCC1E400F63AF4 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
-		95589FA72CCCC31A00F63AF4 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
+		95A7B7812CCE40C500C239F8 /* CharacterDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
+		95A7B7832CCE40C500C239F8 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		95A7B7852CCE40C500C239F8 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		95A7B7872CCE40C500C239F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		95A7B7892CCE40C500C239F8 /* CharacterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
+		95A7B78B2CCE40C500C239F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		95A7B78C2CCE40C500C239F8 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		95A7B78D2CCE40C500C239F8 /* iOSTestJigneshLloydsBankingApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSTestJigneshLloydsBankingApp.swift; sourceTree = "<group>"; };
+		95A7B7972CCE51F000C239F8 /* NetworkManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManaging.swift; sourceTree = "<group>"; };
+		95A7B79A2CCE522F00C239F8 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +86,7 @@
 		95589F672CCCC15E00F63AF4 = {
 			isa = PBXGroup;
 			children = (
-				95589F722CCCC15F00F63AF4 /* iOSTestJigneshLloydsBanking */,
+				95A7B78E2CCE40C500C239F8 /* iOSTestiOSTestJigneshLB */,
 				95589F832CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingTests */,
 				95589F8D2CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingUITests */,
 				95589F712CCCC15F00F63AF4 /* Products */,
@@ -92,34 +96,11 @@
 		95589F712CCCC15F00F63AF4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				95589F702CCCC15F00F63AF4 /* iOSTestJigneshLloydsBanking.app */,
-				95589F802CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingTests.xctest */,
-				95589F8A2CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingUITests.xctest */,
+				95589F702CCCC15F00F63AF4 /* iOSTestJigneshLB.app */,
+				95589F802CCCC16000F63AF4 /* iOSTestJigneshLBTests.xctest */,
+				95589F8A2CCCC16000F63AF4 /* iOSTestJigneshLBUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		95589F722CCCC15F00F63AF4 /* iOSTestJigneshLloydsBanking */ = {
-			isa = PBXGroup;
-			children = (
-				95589FA62CCCC30200F63AF4 /* CharacterDetails */,
-				95589FA52CCCC1E900F63AF4 /* ViewModel */,
-				95589FA02CCCC1A300F63AF4 /* NetworkManager */,
-				95589F9D2CCCC16D00F63AF4 /* Model */,
-				95589F732CCCC15F00F63AF4 /* iOSTestJigneshLloydsBankingApp.swift */,
-				95589F752CCCC15F00F63AF4 /* ContentView.swift */,
-				95589F772CCCC16000F63AF4 /* Assets.xcassets */,
-				95589F792CCCC16000F63AF4 /* Preview Content */,
-			);
-			path = iOSTestJigneshLloydsBanking;
-			sourceTree = "<group>";
-		};
-		95589F792CCCC16000F63AF4 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				95589F7A2CCCC16000F63AF4 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		95589F832CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingTests */ = {
@@ -139,44 +120,77 @@
 			path = iOSTestJigneshLloydsBankingUITests;
 			sourceTree = "<group>";
 		};
-		95589F9D2CCCC16D00F63AF4 /* Model */ = {
+		95A7B7822CCE40C500C239F8 /* CharacterDetails */ = {
 			isa = PBXGroup;
 			children = (
-				95589F9E2CCCC18900F63AF4 /* Character.swift */,
+				95A7B7812CCE40C500C239F8 /* CharacterDetailView.swift */,
+			);
+			path = CharacterDetails;
+			sourceTree = "<group>";
+		};
+		95A7B7842CCE40C500C239F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				95A7B7832CCE40C500C239F8 /* Character.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		95589FA02CCCC1A300F63AF4 /* NetworkManager */ = {
+		95A7B7862CCE40C500C239F8 /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
-				95589FA12CCCC1B500F63AF4 /* NetworkManager.swift */,
+				95A7B7852CCE40C500C239F8 /* NetworkManager.swift */,
+				95A7B7972CCE51F000C239F8 /* NetworkManaging.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
 		};
-		95589FA52CCCC1E900F63AF4 /* ViewModel */ = {
+		95A7B7882CCE40C500C239F8 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				95589FA32CCCC1E400F63AF4 /* CharacterViewModel.swift */,
+				95A7B7872CCE40C500C239F8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		95A7B78A2CCE40C500C239F8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				95A7B7892CCE40C500C239F8 /* CharacterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		95589FA62CCCC30200F63AF4 /* CharacterDetails */ = {
+		95A7B78E2CCE40C500C239F8 /* iOSTestiOSTestJigneshLB */ = {
 			isa = PBXGroup;
 			children = (
-				95589FA72CCCC31A00F63AF4 /* CharacterDetailView.swift */,
+				95A7B7992CCE521700C239F8 /* HelperClasses */,
+				95A7B7822CCE40C500C239F8 /* CharacterDetails */,
+				95A7B7842CCE40C500C239F8 /* Model */,
+				95A7B7862CCE40C500C239F8 /* NetworkManager */,
+				95A7B7882CCE40C500C239F8 /* Preview Content */,
+				95A7B78A2CCE40C500C239F8 /* ViewModel */,
+				95A7B78B2CCE40C500C239F8 /* Assets.xcassets */,
+				95A7B78C2CCE40C500C239F8 /* ContentView.swift */,
+				95A7B78D2CCE40C500C239F8 /* iOSTestJigneshLloydsBankingApp.swift */,
 			);
-			path = CharacterDetails;
+			path = iOSTestiOSTestJigneshLB;
+			sourceTree = "<group>";
+		};
+		95A7B7992CCE521700C239F8 /* HelperClasses */ = {
+			isa = PBXGroup;
+			children = (
+				95A7B79A2CCE522F00C239F8 /* NetworkError.swift */,
+			);
+			path = HelperClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		95589F6F2CCCC15F00F63AF4 /* iOSTestJigneshLloydsBanking */ = {
+		95589F6F2CCCC15F00F63AF4 /* iOSTestJigneshLB */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95589F942CCCC16100F63AF4 /* Build configuration list for PBXNativeTarget "iOSTestJigneshLloydsBanking" */;
+			buildConfigurationList = 95589F942CCCC16100F63AF4 /* Build configuration list for PBXNativeTarget "iOSTestJigneshLB" */;
 			buildPhases = (
 				95589F6C2CCCC15F00F63AF4 /* Sources */,
 				95589F6D2CCCC15F00F63AF4 /* Frameworks */,
@@ -186,14 +200,14 @@
 			);
 			dependencies = (
 			);
-			name = iOSTestJigneshLloydsBanking;
+			name = iOSTestJigneshLB;
 			productName = iOSTestJigneshLloydsBanking;
-			productReference = 95589F702CCCC15F00F63AF4 /* iOSTestJigneshLloydsBanking.app */;
+			productReference = 95589F702CCCC15F00F63AF4 /* iOSTestJigneshLB.app */;
 			productType = "com.apple.product-type.application";
 		};
-		95589F7F2CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingTests */ = {
+		95589F7F2CCCC16000F63AF4 /* iOSTestJigneshLBTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95589F972CCCC16100F63AF4 /* Build configuration list for PBXNativeTarget "iOSTestJigneshLloydsBankingTests" */;
+			buildConfigurationList = 95589F972CCCC16100F63AF4 /* Build configuration list for PBXNativeTarget "iOSTestJigneshLBTests" */;
 			buildPhases = (
 				95589F7C2CCCC16000F63AF4 /* Sources */,
 				95589F7D2CCCC16000F63AF4 /* Frameworks */,
@@ -204,14 +218,14 @@
 			dependencies = (
 				95589F822CCCC16000F63AF4 /* PBXTargetDependency */,
 			);
-			name = iOSTestJigneshLloydsBankingTests;
+			name = iOSTestJigneshLBTests;
 			productName = iOSTestJigneshLloydsBankingTests;
-			productReference = 95589F802CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingTests.xctest */;
+			productReference = 95589F802CCCC16000F63AF4 /* iOSTestJigneshLBTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		95589F892CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingUITests */ = {
+		95589F892CCCC16000F63AF4 /* iOSTestJigneshLBUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95589F9A2CCCC16100F63AF4 /* Build configuration list for PBXNativeTarget "iOSTestJigneshLloydsBankingUITests" */;
+			buildConfigurationList = 95589F9A2CCCC16100F63AF4 /* Build configuration list for PBXNativeTarget "iOSTestJigneshLBUITests" */;
 			buildPhases = (
 				95589F862CCCC16000F63AF4 /* Sources */,
 				95589F872CCCC16000F63AF4 /* Frameworks */,
@@ -222,9 +236,9 @@
 			dependencies = (
 				95589F8C2CCCC16000F63AF4 /* PBXTargetDependency */,
 			);
-			name = iOSTestJigneshLloydsBankingUITests;
+			name = iOSTestJigneshLBUITests;
 			productName = iOSTestJigneshLloydsBankingUITests;
-			productReference = 95589F8A2CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingUITests.xctest */;
+			productReference = 95589F8A2CCCC16000F63AF4 /* iOSTestJigneshLBUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -250,7 +264,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 95589F6B2CCCC15E00F63AF4 /* Build configuration list for PBXProject "iOSTestJigneshLloydsBanking" */;
+			buildConfigurationList = 95589F6B2CCCC15E00F63AF4 /* Build configuration list for PBXProject "iOSTestJigneshLB" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -263,9 +277,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				95589F6F2CCCC15F00F63AF4 /* iOSTestJigneshLloydsBanking */,
-				95589F7F2CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingTests */,
-				95589F892CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingUITests */,
+				95589F6F2CCCC15F00F63AF4 /* iOSTestJigneshLB */,
+				95589F7F2CCCC16000F63AF4 /* iOSTestJigneshLBTests */,
+				95589F892CCCC16000F63AF4 /* iOSTestJigneshLBUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -275,8 +289,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95589F7B2CCCC16000F63AF4 /* Preview Assets.xcassets in Resources */,
-				95589F782CCCC16000F63AF4 /* Assets.xcassets in Resources */,
+				95A7B7942CCE40C500C239F8 /* Assets.xcassets in Resources */,
+				95A7B7922CCE40C500C239F8 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,12 +315,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95589FA22CCCC1B500F63AF4 /* NetworkManager.swift in Sources */,
-				95589FA42CCCC1E400F63AF4 /* CharacterViewModel.swift in Sources */,
-				95589FA82CCCC31A00F63AF4 /* CharacterDetailView.swift in Sources */,
-				95589F9F2CCCC18900F63AF4 /* Character.swift in Sources */,
-				95589F762CCCC15F00F63AF4 /* ContentView.swift in Sources */,
-				95589F742CCCC15F00F63AF4 /* iOSTestJigneshLloydsBankingApp.swift in Sources */,
+				95A7B7932CCE40C500C239F8 /* CharacterViewModel.swift in Sources */,
+				95A7B79B2CCE522F00C239F8 /* NetworkError.swift in Sources */,
+				95A7B7982CCE51F100C239F8 /* NetworkManaging.swift in Sources */,
+				95A7B7952CCE40C500C239F8 /* ContentView.swift in Sources */,
+				95A7B7962CCE40C500C239F8 /* iOSTestJigneshLloydsBankingApp.swift in Sources */,
+				95A7B7912CCE40C500C239F8 /* NetworkManager.swift in Sources */,
+				95A7B78F2CCE40C500C239F8 /* CharacterDetailView.swift in Sources */,
+				95A7B7902CCE40C500C239F8 /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,12 +348,12 @@
 /* Begin PBXTargetDependency section */
 		95589F822CCCC16000F63AF4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 95589F6F2CCCC15F00F63AF4 /* iOSTestJigneshLloydsBanking */;
+			target = 95589F6F2CCCC15F00F63AF4 /* iOSTestJigneshLB */;
 			targetProxy = 95589F812CCCC16000F63AF4 /* PBXContainerItemProxy */;
 		};
 		95589F8C2CCCC16000F63AF4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 95589F6F2CCCC15F00F63AF4 /* iOSTestJigneshLloydsBanking */;
+			target = 95589F6F2CCCC15F00F63AF4 /* iOSTestJigneshLB */;
 			targetProxy = 95589F8B2CCCC16000F63AF4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -469,7 +485,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"iOSTestJigneshLloydsBanking/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"iOSTestiOSTestJigneshLB/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -497,7 +513,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"iOSTestJigneshLloydsBanking/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"iOSTestiOSTestJigneshLB/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -533,7 +549,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSTestJigneshLloydsBanking.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iOSTestJigneshLloydsBanking";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSTestJigneshLB.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iOSTestJigneshLB";
 			};
 			name = Debug;
 		};
@@ -552,7 +568,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSTestJigneshLloydsBanking.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iOSTestJigneshLloydsBanking";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSTestJigneshLB.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iOSTestJigneshLB";
 			};
 			name = Release;
 		};
@@ -593,7 +609,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		95589F6B2CCCC15E00F63AF4 /* Build configuration list for PBXProject "iOSTestJigneshLloydsBanking" */ = {
+		95589F6B2CCCC15E00F63AF4 /* Build configuration list for PBXProject "iOSTestJigneshLB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95589F922CCCC16100F63AF4 /* Debug */,
@@ -602,7 +618,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95589F942CCCC16100F63AF4 /* Build configuration list for PBXNativeTarget "iOSTestJigneshLloydsBanking" */ = {
+		95589F942CCCC16100F63AF4 /* Build configuration list for PBXNativeTarget "iOSTestJigneshLB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95589F952CCCC16100F63AF4 /* Debug */,
@@ -611,7 +627,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95589F972CCCC16100F63AF4 /* Build configuration list for PBXNativeTarget "iOSTestJigneshLloydsBankingTests" */ = {
+		95589F972CCCC16100F63AF4 /* Build configuration list for PBXNativeTarget "iOSTestJigneshLBTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95589F982CCCC16100F63AF4 /* Debug */,
@@ -620,7 +636,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95589F9A2CCCC16100F63AF4 /* Build configuration list for PBXNativeTarget "iOSTestJigneshLloydsBankingUITests" */ = {
+		95589F9A2CCCC16100F63AF4 /* Build configuration list for PBXNativeTarget "iOSTestJigneshLBUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95589F9B2CCCC16100F63AF4 /* Debug */,

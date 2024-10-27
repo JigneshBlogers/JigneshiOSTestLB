@@ -1,6 +1,6 @@
 //
 //  CharacterDetails.swift
-//  iOSTestJigneshLloydsBanking
+//  iOSTestJigneshLB
 //
 //  Created by jignesh kalantri on 27/10/24.
 //

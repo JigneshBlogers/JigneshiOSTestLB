@@ -6,9 +6,19 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            List(viewModel.characters) { character in
-                NavigationLink(destination: CharacterDetailView(character: character)) {
-                    CharacterRow(character: character)
+            List {
+                ForEach(viewModel.characters) { character in
+                    NavigationLink(destination: CharacterDetailView(character: character)) {
+                        CharacterRow(character: character)
+                    }
+                }
+                // Show an activity indicator while loading
+                if viewModel.isLoading {
+                    HStack {
+                        Spacer()
+                        ProgressView("Loading...")
+                        Spacer()
+                    }
                 }
             }
             .navigationTitle("Rick and Morty Characters")
@@ -24,9 +34,25 @@ struct ContentView: View {
                     }
                 )
             }
+            .refreshable {
+                viewModel.fetchCharacters() // Add refresh functionality
+            }
+        }
+        .alert(isPresented: Binding<Bool>(
+            get: { viewModel.errorMessage != nil },
+            set: { if !$0 { viewModel.errorMessage = nil } }
+        )) {
+            Alert(
+                title: Text("Error"),
+                message: Text(viewModel.errorMessage ?? "Unknown error"),
+                dismissButton: .default(Text("OK")) {
+                    viewModel.errorMessage = nil
+                }
+            )
         }
     }
 }
+
 
 struct CharacterRow: View {
     let character: Character
@@ -42,7 +68,7 @@ struct CharacterRow: View {
                 ProgressView()
                     .frame(width: 50, height: 50)
             }
-            
+
             Text(character.name)
                 .font(.headline)
                 .padding(.leading, 8)

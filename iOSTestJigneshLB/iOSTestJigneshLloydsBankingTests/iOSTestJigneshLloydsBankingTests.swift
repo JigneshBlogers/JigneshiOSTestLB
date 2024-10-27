@@ -1,14 +1,14 @@
 //
-//  iOSTestJigneshLloydsBankingTests.swift
-//  iOSTestJigneshLloydsBankingTests
+//  iOSTestJigneshLBTests.swift
+//  iOSTestJigneshLBTests
 //
 //  Created by jignesh kalantri on 26/10/24.
 //
 
 import XCTest
-@testable import iOSTestJigneshLloydsBanking
+@testable import iOSTestJigneshLB
 
-final class iOSTestJigneshLloydsBankingTests: XCTestCase {
+final class iOSTestJigneshLBTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

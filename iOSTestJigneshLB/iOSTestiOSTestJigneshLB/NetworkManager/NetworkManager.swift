@@ -7,33 +7,35 @@
 
 import Foundation
 
-class NetworkManager {
+class NetworkManager: NetworkManaging {
     static let shared = NetworkManager()
     
     private init() {}
     
-    func fetchCharacters(page: Int = 1, completion: @escaping (Result<CharacterResponse, Error>) -> Void) {
+    func fetchCharacters(page: Int = 1, completion: @escaping (Result<CharacterResponse, NetworkError>) -> Void) {
         let urlString = "https://rickandmortyapi.com/api/character?page=\(page)"
         
         guard let url = URL(string: urlString) else {
-            completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
+            completion(.failure(.invalidURL))
             return
         }
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
-                completion(.failure(error))
+                completion(.failure(.networkError(error)))
                 return
             }
+            
             guard let data = data else {
-                completion(.failure(NSError(domain: "No data", code: -1, userInfo: nil)))
+                completion(.failure(.noData))
                 return
             }
+            
             do {
                 let characterResponse = try JSONDecoder().decode(CharacterResponse.self, from: data)
                 completion(.success(characterResponse))
             } catch {
-                completion(.failure(error))
+                completion(.failure(.decodingError(error)))
             }
         }
         task.resume()
