@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ContentView: View {
+struct HomeCharacterListView: View {
     @StateObject private var viewModel = CharactersViewModel()
     @State private var showAlert = false
 
@@ -22,6 +22,7 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Rick and Morty Characters")
+            .font(.title)
             .onAppear {
                 viewModel.fetchCharacters()
             }
@@ -38,18 +39,18 @@ struct ContentView: View {
                 viewModel.fetchCharacters() // Add refresh functionality
             }
         }
-        .alert(isPresented: Binding<Bool>(
-            get: { viewModel.errorMessage != nil },
-            set: { if !$0 { viewModel.errorMessage = nil } }
-        )) {
-            Alert(
-                title: Text("Error"),
-                message: Text(viewModel.errorMessage ?? "Unknown error"),
-                dismissButton: .default(Text("OK")) {
-                    viewModel.errorMessage = nil
-                }
-            )
-        }
+//        .alert(isPresented: Binding<Bool>(
+//            get: { viewModel.errorMessage != nil },
+//            set: { if !$0 { viewModel.errorMessage = nil } }
+//        )) {
+//            Alert(
+//                title: Text("Error"),
+//                message: Text(viewModel.errorMessage ?? "Unknown error"),
+//                dismissButton: .default(Text("OK")) {
+//                    viewModel.errorMessage = nil
+//                }
+//            )
+//        }
     }
 }
 

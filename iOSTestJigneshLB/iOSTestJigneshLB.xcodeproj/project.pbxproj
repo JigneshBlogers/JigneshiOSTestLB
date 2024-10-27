@@ -16,7 +16,7 @@
 		95A7B7922CCE40C500C239F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A7B7872CCE40C500C239F8 /* Preview Assets.xcassets */; };
 		95A7B7932CCE40C500C239F8 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B7892CCE40C500C239F8 /* CharacterViewModel.swift */; };
 		95A7B7942CCE40C500C239F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A7B78B2CCE40C500C239F8 /* Assets.xcassets */; };
-		95A7B7952CCE40C500C239F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B78C2CCE40C500C239F8 /* ContentView.swift */; };
+		95A7B7952CCE40C500C239F8 /* HomeCharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B78C2CCE40C500C239F8 /* HomeCharacterListView.swift */; };
 		95A7B7962CCE40C500C239F8 /* iOSTestJigneshLloydsBankingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B78D2CCE40C500C239F8 /* iOSTestJigneshLloydsBankingApp.swift */; };
 		95A7B7982CCE51F100C239F8 /* NetworkManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B7972CCE51F000C239F8 /* NetworkManaging.swift */; };
 		95A7B79B2CCE522F00C239F8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B79A2CCE522F00C239F8 /* NetworkError.swift */; };
@@ -52,7 +52,7 @@
 		95A7B7872CCE40C500C239F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		95A7B7892CCE40C500C239F8 /* CharacterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		95A7B78B2CCE40C500C239F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		95A7B78C2CCE40C500C239F8 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		95A7B78C2CCE40C500C239F8 /* HomeCharacterListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCharacterListView.swift; sourceTree = "<group>"; };
 		95A7B78D2CCE40C500C239F8 /* iOSTestJigneshLloydsBankingApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSTestJigneshLloydsBankingApp.swift; sourceTree = "<group>"; };
 		95A7B7972CCE51F000C239F8 /* NetworkManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManaging.swift; sourceTree = "<group>"; };
 		95A7B79A2CCE522F00C239F8 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -164,6 +164,7 @@
 		95A7B78E2CCE40C500C239F8 /* iOSTestiOSTestJigneshLB */ = {
 			isa = PBXGroup;
 			children = (
+				95A7B79E2CCE744000C239F8 /* HomeScreen */,
 				95A7B7992CCE521700C239F8 /* HelperClasses */,
 				95A7B7822CCE40C500C239F8 /* CharacterDetails */,
 				95A7B7842CCE40C500C239F8 /* Model */,
@@ -171,7 +172,6 @@
 				95A7B7882CCE40C500C239F8 /* Preview Content */,
 				95A7B78A2CCE40C500C239F8 /* ViewModel */,
 				95A7B78B2CCE40C500C239F8 /* Assets.xcassets */,
-				95A7B78C2CCE40C500C239F8 /* ContentView.swift */,
 				95A7B78D2CCE40C500C239F8 /* iOSTestJigneshLloydsBankingApp.swift */,
 			);
 			path = iOSTestiOSTestJigneshLB;
@@ -183,6 +183,14 @@
 				95A7B79A2CCE522F00C239F8 /* NetworkError.swift */,
 			);
 			path = HelperClasses;
+			sourceTree = "<group>";
+		};
+		95A7B79E2CCE744000C239F8 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				95A7B78C2CCE40C500C239F8 /* HomeCharacterListView.swift */,
+			);
+			path = HomeScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,7 +326,7 @@
 				95A7B7932CCE40C500C239F8 /* CharacterViewModel.swift in Sources */,
 				95A7B79B2CCE522F00C239F8 /* NetworkError.swift in Sources */,
 				95A7B7982CCE51F100C239F8 /* NetworkManaging.swift in Sources */,
-				95A7B7952CCE40C500C239F8 /* ContentView.swift in Sources */,
+				95A7B7952CCE40C500C239F8 /* HomeCharacterListView.swift in Sources */,
 				95A7B7962CCE40C500C239F8 /* iOSTestJigneshLloydsBankingApp.swift in Sources */,
 				95A7B7912CCE40C500C239F8 /* NetworkManager.swift in Sources */,
 				95A7B78F2CCE40C500C239F8 /* CharacterDetailView.swift in Sources */,

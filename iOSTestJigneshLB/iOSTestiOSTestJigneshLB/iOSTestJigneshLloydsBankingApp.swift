@@ -11,7 +11,7 @@ import SwiftUI
 struct iOSTestJigneshLBankingApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeCharacterListView()
         }
     }
 }
