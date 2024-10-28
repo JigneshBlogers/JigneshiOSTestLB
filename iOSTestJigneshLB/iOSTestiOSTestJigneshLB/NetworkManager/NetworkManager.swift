@@ -13,8 +13,9 @@ class NetworkManager: NetworkManaging {
     private init() {}
     
     func fetchCharacters(page: Int = 1, completion: @escaping (Result<CharacterResponse, NetworkError>) -> Void) {
-        let urlString = "https://rickandmortyapi.com/api/character?page=\(page)"
         
+        let urlString = APIConstants.characterURL
+
         guard let url = URL(string: urlString) else {
             completion(.failure(.invalidURL))
             return
