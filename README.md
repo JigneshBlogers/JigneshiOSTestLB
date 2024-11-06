@@ -1,8 +1,4 @@
 
-# Rick and Morty Characters App
-
-A SwiftUI application that fetches and displays characters from the [Rick and Morty API](https://rickandmortyapi.com/). The app uses the MVVM (Model-View-ViewModel) architecture and applies best practices in SwiftUI and Combine to achieve clean, maintainable, and scalable code. 
-
 ## Project Overview
 
 This application demonstrates:
@@ -43,7 +39,7 @@ This project uses the MVVM architecture:
 
 ## Requirements
 
-- **iOS 15.0** or later
+- **iOS 16.0** or later
 - **Xcode 13** or later
 
 ## Getting Started
@@ -52,7 +48,7 @@ This project uses the MVVM architecture:
 
 Make sure you have the following installed:
 - Xcode 13 or higher
-- iOS 15.0 or later on a physical device or simulator
+- iOS 16.0 or later on a physical device or simulator
 
 ### Installation
 
@@ -65,3 +61,7 @@ Make sure you have the following installed:
 2. Open the project in Xcode:
     ```bash
     open Rick
+    
+
+Simulator Screenshot - Clone 2 of iPhone 15 Pro - 2024-11-05 at 17.27.48.png
+

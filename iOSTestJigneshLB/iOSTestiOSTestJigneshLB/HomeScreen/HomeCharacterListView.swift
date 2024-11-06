@@ -1,8 +1,12 @@
 import SwiftUI
 
 struct HomeCharacterListView: View {
-    @StateObject private var viewModel = CharactersViewModel()
+    @ObservedObject var viewModel: CharactersViewModel
     @State private var showAlert = false
+
+    init(viewModel: CharactersViewModel = CharactersViewModel()) {
+        _viewModel = ObservedObject(wrappedValue: viewModel)
+    }
 
     var body: some View {
         NavigationView {
@@ -12,34 +16,35 @@ struct HomeCharacterListView: View {
                         CharacterRow(character: character)
                     }
                 }
-                // Show an activity indicator while loading
+                
                 if viewModel.isLoading {
                     HStack {
                         Spacer()
-                        ProgressView("Loading...")
+                        ProgressView(UIConstants.loadingMessage)
                         Spacer()
                     }
                 }
             }
-            .navigationTitle("Rick and Morty Characters")
+            .navigationTitle(UIConstants.navigationTitle)
             .font(.title)
             .onAppear {
                 viewModel.fetchCharacters()
             }
+            .onChange(of: viewModel.errorMessage) { errorMessage in
+                showAlert = errorMessage != nil
+            }
             .alert(isPresented: $showAlert) {
                 Alert(
-                    title: Text("Error"),
-                    message: Text(viewModel.errorMessage ?? "Unknown error"),
+                    title: Text(UIConstants.errorTitle),
+                    message: Text(viewModel.errorMessage ?? UIConstants.errorUnknownMessage),
                     dismissButton: .default(Text("OK")) {
-                        viewModel.errorMessage = nil
+                        viewModel.setErrorMessageNil()
                     }
                 )
             }
             .refreshable {
-                viewModel.fetchCharacters() // Add refresh functionality
+                viewModel.fetchCharacters()
             }
         }
     }
 }
-
-

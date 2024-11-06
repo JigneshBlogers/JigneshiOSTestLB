@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+protocol CharacterViewModelProtocol: ObservableObject {
+    var characters: [Character] { get }
+    var isLoading: Bool { get }
+    var errorMessage: String? { get }
+    
+    func fetchCharacters()
+}

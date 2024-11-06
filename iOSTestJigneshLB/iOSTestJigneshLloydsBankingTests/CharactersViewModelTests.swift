@@ -6,30 +6,105 @@
 //
 
 import XCTest
+import Combine
+@testable import iOSTestJigneshLB
 
-final class CharactersViewModelTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class CharactersViewModelTests: XCTestCase {
+    var viewModel: CharactersViewModel!
+    var mockNetworkManager: MockNetworkManager! // Define as non-optional
+    var cancellables: Set<AnyCancellable>!
+    
+    override func setUp() {
+        super.setUp()
+        cancellables = []
+        mockNetworkManager = MockNetworkManager() // Initialize as a non-optional instance
+        viewModel = CharactersViewModel(networkManager: mockNetworkManager) // Pass the non-optional instance
+    }
+    
+    override func tearDown() {
+        viewModel = nil
+        mockNetworkManager = nil
+        cancellables = nil
+        super.tearDown()
+    }
+    
+    func testFetchCharactersSuccess() {
+        // Arrange
+        let expectedCharacters = [
+            Character(
+                id: 1,
+                name: "Rick Sanchez",
+                status: "Alive",
+                species: "Human",
+                type: "Scientist",
+                gender: "Male",
+                image: "https://example.com/image.png",
+                url: "https://example.com/character/1"
+            )
+        ]
+        let characterResponse = CharacterResponse(results: expectedCharacters)
+        mockNetworkManager.result = .success(characterResponse)
+        
+        // Create an expectation
+        let expectation = self.expectation(description: "Fetching characters successfully")
+        
+        // Act
+        viewModel.fetchCharacters()
+        
+        // Wait for async operations to complete
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            // Assert
+            XCTAssertEqual(self.viewModel.characters.count, expectedCharacters.count)
+            XCTAssertNil(self.viewModel.errorMessage)
+            XCTAssertFalse(self.viewModel.isLoading)
+            expectation.fulfill() // Fulfill the expectation
+        }
+        
+        // Wait for expectations
+        waitForExpectations(timeout: 1.0, handler: nil)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+
+    func testFetchCharactersFailure() {
+        // Arrange
+        mockNetworkManager.result = .failure(.networkError(NSError(domain: "", code: -1, userInfo: nil)))
+
+        // Act
+        viewModel.fetchCharacters()
+
+        // Wait for async operations to complete
+        let expectation = self.expectation(description: "Wait for failure response")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            // Assert
+            XCTAssertTrue(self.viewModel.characters.isEmpty)
+            XCTAssertFalse(self.viewModel.isLoading)
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 1.0)
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testSetErrorMessageNil() {
+        // Arrange
+        viewModel.errorMessage = "Some error"
+        
+        // Act
+        viewModel.setErrorMessageNil()
+        
+        // Assert
+        XCTAssertNil(viewModel.errorMessage)
     }
+}
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+class MockNetworkManager: NetworkManagerProtocol {
+    var result: Result<CharacterResponse, NetworkError>?
+
+    func fetchCharacters(completion: @escaping (Result<iOSTestJigneshLB.CharacterResponse, iOSTestJigneshLB.NetworkError>) -> Void) {
+        if let result = result {
+            completion(result)
+        } else {
+            completion(.failure(.noData)) // Handle unexpected case
         }
     }
-
 }
+
+

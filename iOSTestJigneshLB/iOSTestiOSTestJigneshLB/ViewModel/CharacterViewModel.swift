@@ -8,25 +8,39 @@
 import Foundation
 import Combine
 
-class CharactersViewModel: ObservableObject {
+final class CharactersViewModel: CharacterViewModelProtocol {
     @Published var characters: [Character] = []
     @Published var errorMessage: String?
-    @Published var isLoading: Bool = false // New loading state
+    @Published var isLoading: Bool = false // Loading state
+    private let networkManager: NetworkManagerProtocol
 
-    func fetchCharacters() {
+    init(networkManager: NetworkManagerProtocol = NetworkManager.shared) {
+        self.networkManager = networkManager
+    }
+
+     func fetchCharacters() {
         isLoading = true // Start loading
-        NetworkManager.shared.fetchCharacters { result in
-            DispatchQueue.main.async {
-                self.isLoading = false // Stop loading
-                switch result {
-                case .success(let characterResponse):
-                    self.characters = characterResponse.results
-                    self.errorMessage = nil
-                case .failure(let error):
-                    self.errorMessage = self.mapErrorToUserFriendlyMessage(error)
-                }
+
+        networkManager.fetchCharacters { [weak self] result in
+            guard let self = self else { return }
+
+            // Update loading state after fetching
+            self.isLoading = false
+            
+            switch result {
+            case .success(let response):
+                self.characters = response.results
+                self.errorMessage = nil
+            case .failure(let error):
+                self.errorMessage = error.localizedDescription
+                self.characters = []
             }
         }
+    }
+
+    
+    func setErrorMessageNil() {
+        errorMessage = nil
     }
     
     private func mapErrorToUserFriendlyMessage(_ error: Error) -> String {
@@ -34,6 +48,8 @@ class CharactersViewModel: ObservableObject {
         switch error {
         case is URLError:
             return "Network error. Please check your internet connection."
+        case let decodingError as DecodingError:
+            return "Failed to load data. Please try again."
         default:
             return "An unexpected error occurred. Please try again."
         }

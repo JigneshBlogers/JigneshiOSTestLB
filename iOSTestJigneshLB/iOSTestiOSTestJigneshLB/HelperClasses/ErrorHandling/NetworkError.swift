@@ -12,4 +12,5 @@ enum NetworkError: Error {
     case networkError(Error)
     case noData
     case decodingError(Error)
+    case invalidResponse 
 }
