@@ -12,6 +12,7 @@
 		95589F912CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95589F902CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingUITestsLaunchTests.swift */; };
 		956F18F02CCF54A000794F06 /* CharacterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F18EF2CCF54A000794F06 /* CharacterRow.swift */; };
 		956F18F42CCF563D00794F06 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F18F32CCF563D00794F06 /* APIConstants.swift */; };
+		9579678E2CDB62D900D38216 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9579678D2CDB62D900D38216 /* ImageCacheManager.swift */; };
 		958021F02CDA1D0D00CCCD2C /* CharacterViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958021EF2CDA1D0D00CCCD2C /* CharacterViewModelProtocol.swift */; };
 		958021F22CDA1F9100CCCD2C /* CharactersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958021F12CDA1F9100CCCD2C /* CharactersViewModelTests.swift */; };
 		95A7B78F2CCE40C500C239F8 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B7812CCE40C500C239F8 /* CharacterDetailView.swift */; };
@@ -52,6 +53,7 @@
 		95589F902CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTestJigneshLloydsBankingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		956F18EF2CCF54A000794F06 /* CharacterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRow.swift; sourceTree = "<group>"; };
 		956F18F32CCF563D00794F06 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		9579678D2CDB62D900D38216 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		958021EF2CDA1D0D00CCCD2C /* CharacterViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModelProtocol.swift; sourceTree = "<group>"; };
 		958021F12CDA1F9100CCCD2C /* CharactersViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModelTests.swift; sourceTree = "<group>"; };
 		95A7B7812CCE40C500C239F8 /* CharacterDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
@@ -153,6 +155,14 @@
 			path = APIConstant;
 			sourceTree = "<group>";
 		};
+		9579678C2CDB62BF00D38216 /* ImageCacheManager */ = {
+			isa = PBXGroup;
+			children = (
+				9579678D2CDB62D900D38216 /* ImageCacheManager.swift */,
+			);
+			path = ImageCacheManager;
+			sourceTree = "<group>";
+		};
 		95A7B7822CCE40C500C239F8 /* CharacterDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +224,7 @@
 		95A7B7992CCE521700C239F8 /* HelperClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9579678C2CDB62BF00D38216 /* ImageCacheManager */,
 				956F18F22CCF562C00794F06 /* APIConstant */,
 				956F18F12CCF54BB00794F06 /* ErrorHandling */,
 				956F18EE2CCF547B00794F06 /* UIHomeCharacterRowCell */,
@@ -370,6 +381,7 @@
 				95A7B7952CCE40C500C239F8 /* HomeCharacterListView.swift in Sources */,
 				95A7B7962CCE40C500C239F8 /* iOSTestJigneshLloydsBankingApp.swift in Sources */,
 				956F18F42CCF563D00794F06 /* APIConstants.swift in Sources */,
+				9579678E2CDB62D900D38216 /* ImageCacheManager.swift in Sources */,
 				95A7B7912CCE40C500C239F8 /* NetworkManager.swift in Sources */,
 				95A7B78F2CCE40C500C239F8 /* CharacterDetailView.swift in Sources */,
 				95A7B7902CCE40C500C239F8 /* Character.swift in Sources */,

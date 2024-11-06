@@ -12,16 +12,18 @@ struct CharacterRow: View {
 
     var body: some View {
         HStack(alignment: .center) {
-            AsyncImage(url: URL(string: character.image)) { image in
-                image.resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 50, height: 50)
-                    .cornerRadius(10)
-            } placeholder: {
-                ProgressView()
-                    .frame(width: 50, height: 50)
-            }
-
+            CachedAsyncImage(
+                url: URL(string: character.image),
+                placeholder: { AnyView(ProgressView().frame(width: 50, height: 50)) },
+                content: { image in
+                    AnyView(
+                        image.resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 50, height: 50)
+                            .cornerRadius(10)
+                    )
+                }
+            )
             Text(character.name)
                 .font(.headline)
                 .padding(.leading, 8)
@@ -31,3 +33,4 @@ struct CharacterRow: View {
         .padding(.vertical, 8)
     }
 }
+
