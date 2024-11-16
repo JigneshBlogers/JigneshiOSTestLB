@@ -31,3 +31,9 @@ struct UIConstants {
     static let errorTitle = "Error"
     static let errorUnknownMessage = "Unknown error"
 }
+
+/// A simple struct to wrap error messages and make them identifiable.
+struct ErrorMessage: Identifiable {
+    let id = UUID()       // A unique identifier for each error message
+    let message: String   // The actual error message
+}

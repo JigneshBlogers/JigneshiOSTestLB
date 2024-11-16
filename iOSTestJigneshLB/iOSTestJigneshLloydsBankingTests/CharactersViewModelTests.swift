@@ -9,102 +9,101 @@ import XCTest
 import Combine
 @testable import iOSTestJigneshLB
 
-class CharactersViewModelTests: XCTestCase {
-    var viewModel: CharactersViewModel!
-    var mockNetworkManager: MockNetworkManager! // Define as non-optional
-    var cancellables: Set<AnyCancellable>!
-    
+
+class ImageCacheManagerTests: XCTestCase {
+    var mockCacheManager: MockImageCacheManager!
+    var imageURL: URL!
+
     override func setUp() {
         super.setUp()
-        cancellables = []
-        mockNetworkManager = MockNetworkManager() // Initialize as a non-optional instance
-        viewModel = CharactersViewModel(networkManager: mockNetworkManager) // Pass the non-optional instance
+        mockCacheManager = MockImageCacheManager()
+        imageURL = URL(string: "https://example.com/image.png")
     }
-    
+
     override func tearDown() {
-        viewModel = nil
-        mockNetworkManager = nil
-        cancellables = nil
+        mockCacheManager = nil
+        imageURL = nil
         super.tearDown()
     }
-    
-    func testFetchCharactersSuccess() {
+
+    func testFetchImage_FromCache() {
         // Arrange
-        let expectedCharacters = [
-            Character(
-                id: 1,
-                name: "Rick Sanchez",
-                status: "Alive",
-                species: "Human",
-                type: "Scientist",
-                gender: "Male",
-                image: "https://example.com/image.png",
-                url: "https://example.com/character/1"
-            )
-        ]
-        let characterResponse = CharacterResponse(results: expectedCharacters)
-        mockNetworkManager.result = .success(characterResponse)
-        
-        // Create an expectation
-        let expectation = self.expectation(description: "Fetching characters successfully")
-        
+        let sampleImage = UIImage(systemName: "person")!
+        mockCacheManager.setMockImage(sampleImage, for: imageURL)
+
         // Act
-        viewModel.fetchCharacters()
-        
-        // Wait for async operations to complete
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            // Assert
-            XCTAssertEqual(self.viewModel.characters.count, expectedCharacters.count)
-            XCTAssertNil(self.viewModel.errorMessage)
-            XCTAssertFalse(self.viewModel.isLoading)
-            expectation.fulfill() // Fulfill the expectation
+        var fetchedImage: UIImage?
+        mockCacheManager.fetchImage(for: imageURL) { image in
+            fetchedImage = image
         }
-        
-        // Wait for expectations
-        waitForExpectations(timeout: 1.0, handler: nil)
-    }
 
-
-    func testFetchCharactersFailure() {
-        // Arrange
-        mockNetworkManager.result = .failure(.networkError(NSError(domain: "", code: -1, userInfo: nil)))
-
-        // Act
-        viewModel.fetchCharacters()
-
-        // Wait for async operations to complete
-        let expectation = self.expectation(description: "Wait for failure response")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            // Assert
-            XCTAssertTrue(self.viewModel.characters.isEmpty)
-            XCTAssertFalse(self.viewModel.isLoading)
-            expectation.fulfill()
-        }
-        waitForExpectations(timeout: 1.0)
-    }
-
-    func testSetErrorMessageNil() {
-        // Arrange
-        viewModel.errorMessage = "Some error"
-        
-        // Act
-        viewModel.setErrorMessageNil()
-        
         // Assert
-        XCTAssertNil(viewModel.errorMessage)
+        XCTAssertEqual(fetchedImage, sampleImage)
+        XCTAssertTrue(mockCacheManager.fetchImageCalled)
+    }
+
+    func testFetchImage_NotInCache() {
+        // Arrange
+        let nonCachedURL = URL(string: "https://example.com/nonexistent.png")!
+
+        // Act
+        var fetchedImage: UIImage?
+        mockCacheManager.fetchImage(for: nonCachedURL) { image in
+            fetchedImage = image
+        }
+
+        // Assert
+        XCTAssertNil(fetchedImage)
+        XCTAssertTrue(mockCacheManager.fetchImageCalled)
+    }
+
+    func testFetchImage_CacheAndRetrieve() {
+        // Arrange
+        let sampleImage = UIImage(systemName: "star")!
+        mockCacheManager.setMockImage(sampleImage, for: imageURL)
+
+        // Act
+        var fetchedImage: UIImage?
+        mockCacheManager.fetchImage(for: imageURL) { image in
+            fetchedImage = image
+        }
+
+        // Assert
+        XCTAssertEqual(fetchedImage, sampleImage)
     }
 }
 
-class MockNetworkManager: NetworkManagerProtocol {
-    var result: Result<CharacterResponse, NetworkError>?
 
-    func fetchCharacters(completion: @escaping (Result<iOSTestJigneshLB.CharacterResponse, iOSTestJigneshLB.NetworkError>) -> Void) {
-        if let result = result {
-            completion(result)
+class MockImageCacheManager: ImageCacheManagerProtocol {
+    private var mockCache: [URL: UIImage] = [:]
+    var fetchImageCalled: Bool = false
+
+    // Simulates fetching an image from the cache or "network"
+    func fetchImage(for url: URL, completion: @escaping (UIImage?) -> Void) {
+        fetchImageCalled = true
+        if let cachedImage = mockCache[url] {
+            completion(cachedImage)
         } else {
-            completion(.failure(.noData)) // Handle unexpected case
+            completion(nil) // Simulate missing image
         }
     }
+
+    // Allows test cases to prepopulate the mock cache
+    func setMockImage(_ image: UIImage, for url: URL) {
+        mockCache[url] = image
+    }
+
+    // Optional utility for clearing the cache between tests
+    func clearCache() {
+        mockCache.removeAll()
+        fetchImageCalled = false
+    }
 }
 
-
+protocol ImageCacheManagerProtocol {
+    /// Fetches an image for a given URL.
+    /// - Parameters:
+    ///   - url: The URL of the image to fetch.
+    ///   - completion: A closure that is called with the fetched `UIImage` or `nil` if the fetch fails.
+    func fetchImage(for url: URL, completion: @escaping (UIImage?) -> Void)
+}

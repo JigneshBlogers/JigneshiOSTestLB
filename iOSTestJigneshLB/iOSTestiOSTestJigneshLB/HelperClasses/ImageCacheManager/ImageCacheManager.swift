@@ -11,28 +11,39 @@ import SwiftUI
 class ImageCacheManager {
     static let shared = ImageCacheManager()
     private init() {}
-    
+
     private var cache = NSCache<NSURL, UIImage>()
 
-    func getImage(for url: URL) -> UIImage? {
-        return cache.object(forKey: url as NSURL)
-    }
-
-    func setImage(_ image: UIImage, for url: URL) {
-        cache.setObject(image, forKey: url as NSURL)
+    func fetchImage(for url: URL, completion: @escaping (UIImage?) -> Void) {
+        // Check cache first
+        if let cachedImage = cache.object(forKey: url as NSURL) {
+            completion(cachedImage)
+            return
+        }
+        
+        // Download if not cached
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data, let image = UIImage(data: data), error == nil else {
+                completion(nil)
+                return
+            }
+            // Cache the image
+            self.cache.setObject(image, forKey: url as NSURL)
+            completion(image)
+        }.resume()
     }
 }
 
 
-struct CachedAsyncImage: View {
+struct CachedAsyncImage<Placeholder: View, Content: View>: View {
     let url: URL?
-    let placeholder: () -> AnyView
-    let content: (Image) -> AnyView
+    let placeholder: () -> Placeholder
+    let content: (Image) -> Content
 
     init(
         url: URL?,
-        @ViewBuilder placeholder: @escaping () -> AnyView,
-        @ViewBuilder content: @escaping (Image) -> AnyView
+        @ViewBuilder placeholder: @escaping () -> Placeholder,
+        @ViewBuilder content: @escaping (Image) -> Content
     ) {
         self.url = url
         self.placeholder = placeholder
@@ -57,22 +68,11 @@ struct CachedAsyncImage: View {
     private func loadImage() {
         guard let url = url else { return }
         
-        if let cachedImage = ImageCacheManager.shared.getImage(for: url) {
-            self.loadedImage = cachedImage
-        } else {
-            downloadImage(from: url)
-        }
-    }
-
-    private func downloadImage(from url: URL) {
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, let image = UIImage(data: data), error == nil else { return }
-            
-            ImageCacheManager.shared.setImage(image, for: url)
+        ImageCacheManager.shared.fetchImage(for: url) { image in
             DispatchQueue.main.async {
                 self.loadedImage = image
             }
-        }.resume()
+        }
     }
 }
 

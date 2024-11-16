@@ -2,12 +2,7 @@ import SwiftUI
 
 struct HomeCharacterListView: View {
     @ObservedObject var viewModel: CharactersViewModel
-    @State private var showAlert = false
-
-    init(viewModel: CharactersViewModel = CharactersViewModel()) {
-        _viewModel = ObservedObject(wrappedValue: viewModel)
-    }
-
+    
     var body: some View {
         NavigationView {
             List {
@@ -18,33 +13,42 @@ struct HomeCharacterListView: View {
                 }
                 
                 if viewModel.isLoading {
-                    HStack {
-                        Spacer()
-                        ProgressView(UIConstants.loadingMessage)
-                        Spacer()
-                    }
+                    LoadingView()
                 }
             }
             .navigationTitle(UIConstants.navigationTitle)
             .font(.title)
             .onAppear {
-                viewModel.fetchCharacters()
+                // Avoid redundant fetch calls if data already exists
+                if viewModel.characters.isEmpty {
+                    viewModel.fetchCharacters()
+                }
             }
-            .onChange(of: viewModel.errorMessage) { errorMessage in
-                showAlert = errorMessage != nil
-            }
-            .alert(isPresented: $showAlert) {
+            .alert(item: $viewModel.errorMessage) { errorMessage in
                 Alert(
-                    title: Text(UIConstants.errorTitle),
-                    message: Text(viewModel.errorMessage ?? UIConstants.errorUnknownMessage),
+                    title: Text("Error"),
+                    message: Text(errorMessage.message),
                     dismissButton: .default(Text("OK")) {
                         viewModel.setErrorMessageNil()
                     }
                 )
             }
             .refreshable {
-                viewModel.fetchCharacters()
+                // Refresh only if not already loading
+                if !viewModel.isLoading {
+                    viewModel.fetchCharacters()
+                }
             }
+        }
+    }
+}
+
+struct LoadingView: View {
+    var body: some View {
+        HStack {
+            Spacer()
+            ProgressView(UIConstants.loadingMessage)
+            Spacer()
         }
     }
 }

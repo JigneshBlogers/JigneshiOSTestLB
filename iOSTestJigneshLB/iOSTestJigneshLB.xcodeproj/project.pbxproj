@@ -13,6 +13,7 @@
 		956F18F02CCF54A000794F06 /* CharacterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F18EF2CCF54A000794F06 /* CharacterRow.swift */; };
 		956F18F42CCF563D00794F06 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F18F32CCF563D00794F06 /* APIConstants.swift */; };
 		9579678E2CDB62D900D38216 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9579678D2CDB62D900D38216 /* ImageCacheManager.swift */; };
+		957E8A1A2CE8BA5100D2E2CD /* ImageCacheManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957E8A192CE8BA5100D2E2CD /* ImageCacheManagerTests.swift */; };
 		958021F02CDA1D0D00CCCD2C /* CharacterViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958021EF2CDA1D0D00CCCD2C /* CharacterViewModelProtocol.swift */; };
 		958021F22CDA1F9100CCCD2C /* CharactersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958021F12CDA1F9100CCCD2C /* CharactersViewModelTests.swift */; };
 		95A7B78F2CCE40C500C239F8 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B7812CCE40C500C239F8 /* CharacterDetailView.swift */; };
@@ -54,6 +55,7 @@
 		956F18EF2CCF54A000794F06 /* CharacterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRow.swift; sourceTree = "<group>"; };
 		956F18F32CCF563D00794F06 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		9579678D2CDB62D900D38216 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
+		957E8A192CE8BA5100D2E2CD /* ImageCacheManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCacheManagerTests.swift; sourceTree = "<group>"; };
 		958021EF2CDA1D0D00CCCD2C /* CharacterViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModelProtocol.swift; sourceTree = "<group>"; };
 		958021F12CDA1F9100CCCD2C /* CharactersViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModelTests.swift; sourceTree = "<group>"; };
 		95A7B7812CCE40C500C239F8 /* CharacterDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				95589F842CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingTests.swift */,
 				958021F12CDA1F9100CCCD2C /* CharactersViewModelTests.swift */,
+				957E8A192CE8BA5100D2E2CD /* ImageCacheManagerTests.swift */,
 			);
 			path = iOSTestJigneshLloydsBankingTests;
 			sourceTree = "<group>";
@@ -304,7 +307,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					95589F6F2CCCC15F00F63AF4 = {
 						CreatedOnToolsVersion = 15.4;
@@ -393,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				958021F22CDA1F9100CCCD2C /* CharactersViewModelTests.swift in Sources */,
+				957E8A1A2CE8BA5100D2E2CD /* ImageCacheManagerTests.swift in Sources */,
 				95589F852CCCC16000F63AF4 /* iOSTestJigneshLloydsBankingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,7 +478,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -531,7 +535,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -556,7 +560,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -585,7 +589,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -602,12 +606,11 @@
 		95589F982CCCC16100F63AF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.league.thelegue.iOSTestJigneshLloydsBankingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -621,12 +624,11 @@
 		95589F992CCCC16100F63AF4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.league.thelegue.iOSTestJigneshLloydsBankingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -640,7 +642,6 @@
 		95589F9B2CCCC16100F63AF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -657,7 +658,6 @@
 		95589F9C2CCCC16100F63AF4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
