@@ -50,18 +50,7 @@ Make sure you have the following installed:
 - Xcode 13 or higher
 - iOS 16.0 or later on a physical device or simulator
 
-### Installation
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/your-username/RickAndMortyApp.git
-    cd RickAndMortyApp
-    ```
-
-2. Open the project in Xcode:
-    ```bash
-    open Rick
-    
 
 Simulator Screenshot - Clone 2 of iPhone 15 Pro - 2024-11-05 at 17.27.48.png
 
